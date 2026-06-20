@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <title>AnimeCalculator</title>
+    <link rel="shortcut icon" href="./images/icon.jpg">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./media/media.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/appleicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/icon192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/icon512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/icon16.png">
+
+</head>
+
+<body id="gradient">
+
+    <div align="center">
+        <!-- <div class="fon"> <img src="./images/background.jpg"></div> -->
+        <h1 class="name">
+            <span>Anime</span>Calculator<span class="version">v3.0 </span>
+        </h1>
+        <div class="calculator-wrapper">
+            <input id="display" class="enter" readonly maxlength="8" placeholder="0">
+            <p class="inst">by @animeperedoz</p>
+            <div id="button" class="calculator">
+                <audio id="soundclear" src="./audio/btnclear.mp3"></audio>
+                <audio id="soundbtnr" src="./audio/btnr.mp3"></audio>
+                <audio id="sounddot" src="./audio/btndot.mp3"></audio>
+                <audio id="soundbtn" src="./audio/btn.mp3"></audio>
+                <button data-value="backspace" class="btn btndls" id="btnclear">⌫</button>
+                <button data-value="C" class="btn btndls btnac" id="btnac">C</button>
+                <button data-value="%" class="btn btndls btnd btn2" id="btnprocent">%</button>
+                <button data-value="÷" class="btn btndls btnd btn2" id="btndel">÷</button>
+
+                <button data-value="7" class="btn btnd btn1" id="number7">7</button>
+                <button data-value="8" class="btn btnd btn1" id="number8">8</button>
+                <button data-value="9" class="btn btnd btn1" id="number9">9</button>
+                <button data-value="×" class="btn btndls btnd btn2" id="btnmnozh">×</button>
+
+                <button data-value="4" class="btn btnd btn1" id="number4">4</button>
+                <button data-value="5" class="btn btnd btn1" id="number5">5</button>
+                <button data-value="6" class="btn btnd btn1" id="number6">6</button>
+                <button data-value="-" class="btn btndls btnd btn2" id="btnminus">−</button>
+
+                <button data-value="1" class="btn btnd btn1" id="number1">1</button>
+                <button data-value="2" class="btn btnd btn1" id="number2">2</button>
+                <button data-value="3" class="btn btnd btn1" id="number3">3</button>
+                <button data-value="+" class="btn btndls btnd btn2" id="btnplus">+</button>
+
+
+                <button data-value="." class="btn btndls btnd" id="btndot">.</button>
+                <button data-value="0" class="btn btnd btn1" id="number0">0</button>
+                <button data-value="=" class="btn btndls" id="btnr">=</button>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <br />
+    </div>
+
+
+
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>

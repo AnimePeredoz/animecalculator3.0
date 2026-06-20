@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'Impact';
+    src: url('./fonts/Impact.woff2') format('woff2'),
+        url('./fonts/Impact.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'calculator';
+    src: url('./fonts/Calculator.woff2') format('woff2'),
+        url('./fonts/Calculator.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anton';
+    src: url('./fonts/Anton-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fdb8ba 5%, #fad0c4 10%, #fbc2eb 20%, #a6c1ee 30%, #a18cd1 40%, #8a77b8 50%,
+            #8a77b8 50%, #a18cd1 60%, #a6c1ee 70%, #fbc2eb 80%, #fad0c4 90%, #fdb8ba 95%, #ff9a9e 100%);
+    background-size: 400% 400%;
+
+    animation: gradient-animation 15s ease infinite;
+    overflow-x: hidden;
+
+    font-family: 'Impact', sans-serif;
+}
+
+
+#loader-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+#loader-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+h1 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.name {
+    font-family: 'Impact', sans-serif;
+    color: #8a77b8;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    /* Адаптивный размер шрифта */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+div h1 span {
+    color: #fbc2eb;
+}
+
+.version {
+    color: #a18cd1;
+}
+
+.inst {
+    text-align: center;
+    font-family: 'calculator', sans-serif;
+    font-style: oblique;
+    margin-bottom: 15px;
+}
+
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 360px;
+
+}
+
+/* --- 6. ДИСПЛЕЙ --- */
+#display:enabled {
+    border: 5px solid #8a77b8;
+    border-radius: 8px;
+    font-size: clamp(30px, 8vw, 45px);
+
+    font-family: 'calculator', sans-serif;
+    text-align: right;
+    padding: 10px;
+    width: 100%;
+    height: 70px;
+    background-image: url('./images/enter.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fbc2eb;
+    font-weight: bold;
+    -webkit-text-stroke: #000000 0.3px;
+    margin-bottom: 10px;
+}
+
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+
+    aspect-ratio: 4 / 4.5;
+
+    border: 5px solid #8a77b8;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+
+.btn {
+    font-family: 'Impact', sans-serif;
+    background-color: #fbc2eb;
+    border: 2px solid #8a77b8;
+    font-size: clamp(20px, 6vw, 32px);
+
+    color: #8a77b8;
+    -webkit-text-stroke: #000000 0.5px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    transition: transform 0.1s ease, filter 0.1s ease;
+
+
+    -webkit-tap-highlight-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85% 85%;
+
+    image-rendering: -webkit-optimize-contrast;
+
+    overflow: hidden;
+
+}
+
+
+.btn:active {
+    filter: hue-rotate(90deg);
+
+    transform: scale(0.92);
+}
+
+
+#btnr {
+    grid-column: span 2;
+
+    width: 100%;
+    background-image: url('./images/rr.png');
+    color: #fbc2eb;
+}
+
+.btndls {
+    background-color: #ffaae7;
+    color: #fbc2eb;
+}
+
+
+#number1 {
+    background-image: url('./images/1.png');
+}
+
+#number2 {
+    background-image: url('./images/2.png');
+}
+
+#number3 {
+    background-image: url('./images/3.png');
+}
+
+#number4 {
+    background-image: url('./images/4.png');
+}
+
+#number5 {
+    background-image: url('./images/5.png');
+}
+
+#number6 {
+    background-image: url('./images/6.png');
+}
+
+#number7 {
+    background-image: url('./images/7.png');
+}
+
+#number8 {
+    background-image: url('./images/8.png');
+}
+
+#number9 {
+    background-image: url('./images/9.png');
+}
+
+#number0 {
+    background-image: url('./images/0.png');
+}
+
+#btnclear {
+    background-image: url('./images/clear.png');
+}
+
+#btnac {
+    background-image: url('./images/ac.png');
+}
+
+#btnprocent {
+    background-image: url('./images/procent.png');
+}
+
+#btndel {
+    background-image: url('./images/del.png');
+}
+
+#btnmnozh {
+    background-image: url('./images/mnozh.png');
+}
+
+#btnminus {
+    background-image: url('./images/minus.png');
+}
+
+#btnplus {
+    background-image: url('./images/plus.png');
+}
+
+#btndot {
+    background-image: url('./images/dot.png');
+}
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
