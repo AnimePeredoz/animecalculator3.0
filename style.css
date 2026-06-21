@@ -48,7 +48,16 @@ body {
     overflow-y: hidden;
 
     font-family: 'Impact', sans-serif;
+     /* Чтобы приложение растягивалось на 100% высоты */
+    min-height: -webkit-fill-available;
+    min-height: 100dvh; 
+    
+    /* Добавляем внутренние отступы для безопасных зон */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
+}
+
 
 
 #loader-video-container {
