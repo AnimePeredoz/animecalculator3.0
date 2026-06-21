@@ -24,7 +24,7 @@
 
 * {
     box-sizing: border-box;
-
+    padding-bottom: env(safe-area-inset-bottom);
     margin: 0;
     padding: 0;
 }
