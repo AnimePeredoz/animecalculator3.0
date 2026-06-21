@@ -59,7 +59,7 @@ let currentInput = '';
 let firstOperand = null;
 let operator = null;
 let isResultDisplayed = false;
-const message = 'ПОШЕЛ НАХУЙ';
+const message = 'ИДИ НАХУЙ';
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
