@@ -22,50 +22,40 @@
 }
 
 
-/* --- ОБНОВЛЕННЫЙ ИСПРАВЛЕННЫЙ БЛОК ДЛЯ HTML И BODY --- */
-html {
-    width: 100%;
-    height: 100dvh; /* Жестко фиксируем высоту под экран iPhone */
+* {
+    box-sizing: border-box;
+
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    /* КЛЮЧЕВОЙ ФИКС: Задаем базовый цвет для системных зон iOS. */
-    /* Цвет #ff9a9e — это стартовый цвет вашего розового градиента. */
-    /* Теперь нижняя полоса iPhone окрасится в розовый и сольется с приложением! */
-    background-color: #ff9a9e; 
 }
 
 body {
     width: 100%;
-    height: 100dvh; /* Растягиваем строго на 100% видимой области */
-    margin: 0;
-    overflow: hidden;
-
-    /* Возвращаем ваш анимированный розово-фиолетовый градиент */
-    background: linear-gradient(45deg, #ff9a9e 0%, #fdb8ba 5%, #fad0c4 10%, #fbc2eb 20%, #a6c1ee 30%, #a18cd1 40%, #8a77b8 50%,
-            #8a77b8 50%, #a18cd1 60%, #a6c1ee 70%, #fbc2eb 80%, #fad0c4 90%, #fdb8ba 95%, #ff9a9e 100%);
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    /* Добавляем безопасные отступы, чтобы кнопки калькулятора */
-    /* не наезжали на Dynamic Island сверху и Home Indicator снизу */
     padding: 20px;
-    padding-top: calc(20px + env(safe-area-inset-top));
-    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    background: linear-gradient(45deg, #ff9a9e 0%, #fdb8ba 5%, #fad0c4 10%, #fbc2eb 20%, #a6c1ee 30%, #a18cd1 40%, #8a77b8 50%,
+            #8a77b8 50%, #a18cd1 60%, #a6c1ee 70%, #fbc2eb 80%, #fad0c4 90%, #fdb8ba 95%, #ff9a9e 100%);
+    background-size: 400% 400%;
+
+    animation: gradient-animation 15s ease infinite;
+    overflow-x: hidden;
+
+    font-family: 'Impact', sans-serif;
 }
 
-/* Изменяем высоту контейнера лоадера на корректную dvh */
+
 #loader-video-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100dvh; /* Заменено с min-height на точную высоту */
+    height: 100%;
     z-index: 9999;
     background-color: #000;
     display: flex;
@@ -73,7 +63,6 @@ body {
     align-items: center;
     transition: opacity 0.5s ease;
 }
-
 
 #loader-video {
     width: 100%;
