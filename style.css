@@ -113,89 +113,51 @@ div h1 span {
 }
 
 
-/* --- 5. ОБЁРТКА КАЛЬКУЛЯТОРА --- */
 .calculator-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 340px; /* Немного уменьшили ширину для компактности */
-    
-    /* КЛЮЧЕВОЙ ФИКС: Ограничиваем общую высоту, чтобы ничего не улетало */
-    max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 140px);
-    box-sizing: border-box;
-    position: relative;
+    max-width: 360px;
+
 }
 
 /* --- 6. ДИСПЛЕЙ --- */
 #display:enabled {
-    border: 4px solid #3a2200;
-    border-radius: 12px;
-    font-size: clamp(28px, 6vw, 42px); /* Слегка уменьшили шрифт, чтобы цифры не ломали высоту */
-    font-family: 'calculator', monospace;
+    border: 5px solid #8a77b8;
+    border-radius: 8px;
+    font-size: clamp(30px, 8vw, 45px);
+
+    font-family: 'calculator', sans-serif;
     text-align: right;
-    padding: 10px 20px;
+    padding: 10px;
     width: 100%;
-    height: 65px; /* Уменьшили высоту с 80px до 65px */
-    background-color: #050301;
-    background-image: none;
-    color: #ff6600;
-    font-weight: normal;
-    text-shadow:
-        0 0 2px #ff3300,
-        0 0 8px #ff6600,
-        0 0 15px #ff9900,
-        0 0 25px rgba(255, 102, 0, 0.6);
-
-    margin-bottom: 10px; /* Уменьшили отступ до сетки кнопок */
-    box-shadow:
-        inset 0 0 20px rgba(0, 0, 0, 0.9),
-        inset 0 0 15px rgba(255, 68, 0, 0.2),
-        0 4px 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    letter-spacing: 2px;
+    height: 70px;
+    background-image: url('./images/enter.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fbc2eb;
+    font-weight: bold;
+    -webkit-text-stroke: #000000 0.3px;
+    margin-bottom: 10px;
 }
 
-/* Фикс для наложения сетки (эффекта экрана) поверх уменьшенного дисплея */
-.calculator-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    height: 55px; /* Уменьшили высоту маски под новый размер дисплея */
-    border-radius: 6px;
-    pointer-events: none;
-    z-index: 10;
-    background-image:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 40%),
-        linear-gradient(rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0) 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0) 1px);
-    background-size: 100% 100%, 3px 3px, 3px 3px;
-}
 
-/* --- 7. СЕТКА КНОПОК --- */
 .calculator {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 8px; /* Уменьшили зазоры между кнопками с 12px до 8px */
-
+    gap: 8px;
     width: 100%;
-    /* КЛЮЧЕВОЙ ФИКС: убираем жесткий aspect-ratio, даем кнопкам сжиматься по высоте */
-    height: auto; 
-    flex-grow: 1; /* Калькулятор займет всё оставшееся свободное место */
 
-    background-color: #0d0a07;
-    border: 5px solid #2b1a03;
-    border-radius: 12px;
-    padding: 10px; /* Немного уменьшили внутренний отступ */
+    aspect-ratio: 4 / 4.5;
 
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.8),
-        inset 0 0 15px rgba(0, 0, 0, 0.6);
+    border: 5px solid #8a77b8;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+
 }
-
 
 
 .btn {
